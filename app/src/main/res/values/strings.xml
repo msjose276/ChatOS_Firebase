@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NewChatOS</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_exchange_message">ExchangeMessage</string>
+    <string name="title_activity_navegation_drawer">NavegationDrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_menu_new_chat">MenuNewChatActivity</string>
+    <string name="title_activity_menu_new_group_chat">MenuNewGroupChatActivity</string>
+    <string name="title_activity_menu_pendents">MenuPendentsActivity</string>
+    <string name="title_activity_menu_recents">MenuRecentsActivity</string>
+    <string name="title_activity_menu_blocked">MenuBlockedActivity</string>
+    <string name="title_activity_menu_settings">MenuSettingsActivity</string>
+    <string name="title_activity_menu_info">MenuInfoActivity</string>
+</resources>

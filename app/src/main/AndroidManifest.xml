@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mateusjose.newchatos">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".TabbActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ExchangeMessageActivity"
+            android:label="@string/title_activity_exchange_message"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NavegationDrawerActivity"
+            android:label="@string/title_activity_navegation_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Activities.MenuNewChatActivity"
+            android:label="@string/title_activity_menu_new_chat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Activities.MenuNewGroupChatActivity"
+            android:label="@string/title_activity_menu_new_group_chat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Activities.MenuPendentsActivity"
+            android:label="@string/title_activity_menu_pendents"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Activities.MenuRecentsActivity"
+            android:label="@string/title_activity_menu_recents"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Activities.MenuBlockedActivity"
+            android:label="@string/title_activity_menu_blocked"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Activities.MenuSettingsActivity"
+            android:label="@string/title_activity_menu_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Menu_Activities.MenuInfoActivity"
+            android:label="@string/title_activity_menu_info"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
