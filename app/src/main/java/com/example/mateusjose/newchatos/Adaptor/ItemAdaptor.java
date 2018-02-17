@@ -50,9 +50,6 @@ public class ItemAdaptor extends ArrayAdapter<Contact> {
             convertView=layoutInflater.inflate(R.layout.item_card,parent,false);
         }
 
-
-
-
         // get the views
         TextView fullName= (TextView) convertView.findViewById(R.id.tvFullName);
         TextView numberOfMessages= (TextView) convertView.findViewById(R.id.tvNumberOfMessages);
@@ -84,8 +81,6 @@ public class ItemAdaptor extends ArrayAdapter<Contact> {
         }
         else
             profileImage.setBorderWidth(0);
-
-
 
         // define the color for different fragments
         if(fragmentType==0){

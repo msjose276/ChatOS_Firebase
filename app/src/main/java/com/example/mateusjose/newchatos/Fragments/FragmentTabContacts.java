@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 
+import com.example.mateusjose.newchatos.Activities.ExchangeMessageActivity;
 import com.example.mateusjose.newchatos.Objects.Contact;
 import com.example.mateusjose.newchatos.Adaptor.ItemAdaptor;
 import com.example.mateusjose.newchatos.Activities.NavegationDrawerActivity;
@@ -62,7 +63,7 @@ public class FragmentTabContacts extends android.support.v4.app.Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(getContext(), NavegationDrawerActivity.class);
+                Intent intent = new Intent(getContext(), ExchangeMessageActivity.class);
                 startActivity(intent);
             }
         });
