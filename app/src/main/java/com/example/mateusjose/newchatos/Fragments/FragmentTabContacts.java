@@ -1,25 +1,20 @@
 package com.example.mateusjose.newchatos.Fragments;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 
-import com.example.mateusjose.newchatos.Contact;
-import com.example.mateusjose.newchatos.ItemAdaptor;
-import com.example.mateusjose.newchatos.NavegationDrawerActivity;
+import com.example.mateusjose.newchatos.Objects.Contact;
+import com.example.mateusjose.newchatos.Adaptor.ItemAdaptor;
+import com.example.mateusjose.newchatos.Activities.NavegationDrawerActivity;
 import com.example.mateusjose.newchatos.R;
 
 import java.util.ArrayList;
@@ -30,6 +25,15 @@ import java.util.List;
  */
 
 public class FragmentTabContacts extends android.support.v4.app.Fragment{
+
+
+    public void FragmentTabContacts(){
+
+        Toast.makeText(getActivity(), "mateua", Toast.LENGTH_LONG).show();
+
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

@@ -17,4 +17,7 @@
     <string name="title_activity_menu_blocked">MenuBlockedActivity</string>
     <string name="title_activity_menu_settings">MenuSettingsActivity</string>
     <string name="title_activity_menu_info">MenuInfoActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,9 +1,14 @@
-package com.example.mateusjose.newchatos;
+package com.example.mateusjose.newchatos.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +20,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.mateusjose.newchatos.Fragments.FragmentTabContacts;
+import com.example.mateusjose.newchatos.Fragments.FragmentTabExplor;
+import com.example.mateusjose.newchatos.Fragments.FragmentTabMessages;
 import com.example.mateusjose.newchatos.Menu_Activities.MenuBlockedActivity;
 import com.example.mateusjose.newchatos.Menu_Activities.MenuInfoActivity;
 import com.example.mateusjose.newchatos.Menu_Activities.MenuNewChatActivity;
@@ -22,9 +30,12 @@ import com.example.mateusjose.newchatos.Menu_Activities.MenuNewGroupChatActivity
 import com.example.mateusjose.newchatos.Menu_Activities.MenuPendentsActivity;
 import com.example.mateusjose.newchatos.Menu_Activities.MenuRecentsActivity;
 import com.example.mateusjose.newchatos.Menu_Activities.MenuSettingsActivity;
+import com.example.mateusjose.newchatos.R;
+import com.example.mateusjose.newchatos.TabsPager;
 
 public class NavegationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +61,17 @@ public class NavegationDrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        //**************** for sliding menu
+
+        TabLayout tabLayout=(TabLayout)findViewById(R.id.tabs);
+        ViewPager viewPager=(ViewPager)findViewById(R.id.container);
+        TabsPager tabsPager=new TabsPager(getSupportFragmentManager());
+
+        viewPager.setAdapter(tabsPager);
+        tabLayout.setupWithViewPager(viewPager);
+        //********************** end of sliding menu
 
     }
 
@@ -129,4 +151,7 @@ public class NavegationDrawerActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 }

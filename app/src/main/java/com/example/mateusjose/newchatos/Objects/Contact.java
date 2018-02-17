@@ -1,8 +1,10 @@
-package com.example.mateusjose.newchatos;
+package com.example.mateusjose.newchatos.Objects;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+
+import com.example.mateusjose.newchatos.R;
 
 /**
  * Created by mateusjose on 2/8/18.
