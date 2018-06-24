@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "530044874217",
+    "firebase_url": "https://chatos-5bead.firebaseio.com",
+    "project_id": "chatos-5bead",
+    "storage_bucket": "chatos-5bead.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530044874217:android:943ceb0b61cfd6da",
+        "android_client_info": {
+          "package_name": "com.angoapp.newchatos.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530044874217-1fcemgcr09hgq1futm7k96lkcvrka42q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.angoapp.newchatos.firebase",
+            "certificate_hash": "5366a31dfb8dbf77d9d06fcbd9a8f74be151ce40"
+          }
+        },
+        {
+          "client_id": "530044874217-rp5ks12ilf8asu1qpmhg0rqdfk288e1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcmFPB9R2MC5XhuggF8gE9ZdTm-xBAR38"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530044874217-rp5ks12ilf8asu1qpmhg0rqdfk288e1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

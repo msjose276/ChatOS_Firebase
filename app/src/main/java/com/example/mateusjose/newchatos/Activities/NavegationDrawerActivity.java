@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -20,16 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.mateusjose.newchatos.Fragments.FragmentTabContacts;
-import com.example.mateusjose.newchatos.Fragments.FragmentTabExplor;
-import com.example.mateusjose.newchatos.Fragments.FragmentTabMessages;
-import com.example.mateusjose.newchatos.Menu_Activities.MenuBlockedActivity;
-import com.example.mateusjose.newchatos.Menu_Activities.MenuInfoActivity;
-import com.example.mateusjose.newchatos.Menu_Activities.MenuNewChatActivity;
-import com.example.mateusjose.newchatos.Menu_Activities.MenuNewGroupChatActivity;
-import com.example.mateusjose.newchatos.Menu_Activities.MenuPendentsActivity;
-import com.example.mateusjose.newchatos.Menu_Activities.MenuRecentsActivity;
-import com.example.mateusjose.newchatos.Menu_Activities.MenuSettingsActivity;
 import com.example.mateusjose.newchatos.R;
 import com.example.mateusjose.newchatos.TabsPager;
 
@@ -73,6 +60,9 @@ public class NavegationDrawerActivity extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
         //********************** end of sliding menu
 
+        Intent main = new Intent(getBaseContext(), ExchangeMessageActivity.class);
+        startActivity(main);
+
     }
 
     @Override
@@ -115,34 +105,24 @@ public class NavegationDrawerActivity extends AppCompatActivity
 
         if (id == R.id.nav_newChat) {
             // Handle the camera action
-            Intent main = new Intent(getBaseContext(), MenuNewChatActivity.class);
-            startActivity(main);
+
 
         } else if (id == R.id.nav_newGroupChat) {
 
-            Intent main = new Intent(getBaseContext(), MenuNewGroupChatActivity.class);
-            startActivity(main);
+
             Toast.makeText(getBaseContext(), "nav_newGroupChat", Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.nav_pendents) {
-            Intent main = new Intent(getBaseContext(), MenuPendentsActivity.class);
-            startActivity(main);
+
             Toast.makeText(getBaseContext(), "nav_pendents", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_recents) {
-            Intent main = new Intent(getBaseContext(), MenuRecentsActivity.class);
-            startActivity(main);
+
             Toast.makeText(getBaseContext(), "nav_recents", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_blocked) {
-            Intent main = new Intent(getBaseContext(), MenuBlockedActivity.class);
-            startActivity(main);
             Toast.makeText(getBaseContext(), "nav_blocked", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_settings) {
-            Intent main = new Intent(getBaseContext(), MenuSettingsActivity.class);
-            startActivity(main);
             Toast.makeText(getBaseContext(), "nav_settings", Toast.LENGTH_LONG).show();
         }else if (id == R.id.nav_info) {
-            Intent main = new Intent(getBaseContext(), MenuInfoActivity.class);
-            startActivity(main);
             Toast.makeText(getBaseContext(), "nav_info", Toast.LENGTH_LONG).show();
         }
 

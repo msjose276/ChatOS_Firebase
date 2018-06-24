@@ -25,34 +25,6 @@
             </intent-filter>
 
         </activity>
-        <activity
-            android:name=".Menu_Activities.MenuNewChatActivity"
-            android:label="@string/title_activity_menu_new_chat"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Menu_Activities.MenuNewGroupChatActivity"
-            android:label="@string/title_activity_menu_new_group_chat"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Menu_Activities.MenuPendentsActivity"
-            android:label="@string/title_activity_menu_pendents"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Menu_Activities.MenuRecentsActivity"
-            android:label="@string/title_activity_menu_recents"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Menu_Activities.MenuBlockedActivity"
-            android:label="@string/title_activity_menu_blocked"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Menu_Activities.MenuSettingsActivity"
-            android:label="@string/title_activity_menu_settings"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Menu_Activities.MenuInfoActivity"
-            android:label="@string/title_activity_menu_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
