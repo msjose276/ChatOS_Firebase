@@ -20,6 +20,9 @@ import android.widget.Toast;
 
 import com.example.mateusjose.newchatos.Adaptor.MessageAdapter;
 import com.example.mateusjose.newchatos.R;
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ExchangeMessageActivity extends AppCompatActivity {
@@ -35,6 +39,7 @@ public class ExchangeMessageActivity extends AppCompatActivity {
 
     public static final String ANONYMOUS = "anonymous";
     public static final int DEFAULT_MSG_LENGTH_LIMIT = 1000;
+    private static final int RC_SIGN_IN = 123;
 
     private ListView mMessageListView;
     private MessageAdapter mMessageAdapter;
@@ -49,8 +54,13 @@ public class ExchangeMessageActivity extends AppCompatActivity {
     private DatabaseReference mMessagesDatabaseReference;
     private ChildEventListener mChildEventListener;
 
-    //private FirebaseAuth mFirebaseAuth;
-    //private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    // Choose authentication providers
+    List<AuthUI.IdpConfig> providers = Arrays.asList(
+            new AuthUI.IdpConfig.EmailBuilder().build(),
+            new AuthUI.IdpConfig.GoogleBuilder().build());
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +71,7 @@ public class ExchangeMessageActivity extends AppCompatActivity {
 
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mFirebaseAuth = FirebaseAuth.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("messages");
 
         //mFirebaseAuth = FirebaseAuth.getInstance();
@@ -155,6 +166,30 @@ public class ExchangeMessageActivity extends AppCompatActivity {
 
 
 
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                //if the user is signed in
+                if(user!=null){
+                    Toast.makeText(ExchangeMessageActivity.this, "you are already logged in", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExchangeMessageActivity.this, "you are already logged in", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExchangeMessageActivity.this, "you are already logged in", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    // Create and launch sign-in intent
+                    startActivityForResult(
+                            AuthUI.getInstance()
+                                    .createSignInIntentBuilder()
+                                    .setAvailableProviders(providers)
+                                    .build(),
+                            RC_SIGN_IN);
+                }
+            }
+        };
+
 
     }
 
@@ -168,5 +203,15 @@ public class ExchangeMessageActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 }
