@@ -145,50 +145,17 @@ public class ExchangeMessageActivity extends AppCompatActivity {
                 FriendlyMessage friendlyMessage=dataSnapshot.getValue(FriendlyMessage.class);
                 mMessageAdapter.add(friendlyMessage);
             }
-
             @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-            }
-
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
             @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-            }
-
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) { }
             @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-            }
-
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
+            public void onCancelled(@NonNull DatabaseError databaseError) { }
         };
         mMessagesDatabaseReference.addChildEventListener(mChildEventListener);
 
-
-
-        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                //if the user is signed in
-                if(user!=null){
-                    Toast.makeText(ExchangeMessageActivity.this, "you are already logged in", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(ExchangeMessageActivity.this, "you are already logged in", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(ExchangeMessageActivity.this, "you are already logged in", Toast.LENGTH_SHORT).show();
-
-                }else{
-
-                    // Create and launch sign-in intent
-                    startActivityForResult(
-                            AuthUI.getInstance()
-                                    .createSignInIntentBuilder()
-                                    .setAvailableProviders(providers)
-                                    .build(),
-                            RC_SIGN_IN);
-                }
-            }
-        };
 
 
     }
@@ -204,14 +171,30 @@ public class ExchangeMessageActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-
+    @Override
     protected void onPause() {
         super.onPause();
-        mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
+        //mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
+        dettachDatabaseReadListner();
+        //mMessageAdapter.clear();
+
     }
     @Override
     protected void onResume() {
         super.onResume();
-        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+        //mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dettachDatabaseReadListner();
+    }
+
+    public void dettachDatabaseReadListner(){
+        if(mChildEventListener != null){
+            mMessagesDatabaseReference.removeEventListener(mChildEventListener);
+        }
+    }
+
 }

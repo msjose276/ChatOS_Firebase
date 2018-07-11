@@ -13,18 +13,20 @@
             android:name=".Activities.ExchangeMessageActivity"
             android:label="@string/title_activity_exchange_message"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".Activities.NavegationDrawerActivity"
             android:label="@string/title_activity_navegation_drawer"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity
+            android:name=".Activities.UserProfileActivity"
+            android:label="@string/title_activity_user_profile"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
